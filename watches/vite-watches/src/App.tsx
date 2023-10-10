@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useState } from "react";
+import ClockWidget from "./components/ClockWidget/ClockWidget";
+import { IClockProps } from "./models/IClockProps";
+import Clocks from "./components/Clocks/Clocks";
+import { v4 } from "uuid";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [clocks, setClocks] = useState([
+    {
+      id: v4(),
+      name: "Moscow",
+      timezone: 4,
+    },
+    {
+      id: v4(),
+      name: "London",
+      timezone: 1,
+    },
+  ]);
+
+  const addClock = (newClock: Omit<IClockProps, "id">) => {
+    const clock = {
+      ...newClock,
+      id: v4(),
+    };
+    setClocks([...clocks, clock]);
+  };
+
+  const deleteClock = (id: string) => {
+    setClocks((clocks) => clocks.filter((clock) => clock.id !== id));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="container">
+      <h2>World clocks</h2>
+      <ClockWidget addClock={addClock} />
+      <Clocks clocks={clocks} onDelete={deleteClock} />
+    </div>
+  );
 }
 
-export default App
+export default App;

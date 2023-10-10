@@ -1,0 +1,74 @@
+.clock {
+    margin-right: 10px;
+    width: 150px;
+    position: relative;
+  }
+  
+  .clock-name {
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .clock-btn {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+  }
+  
+  .clock-face {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 5px auto;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .clock-hand {
+    width: 0;
+    height: 0;
+    top: 50px;
+    left: 50px;
+    position: absolute;
+  }
+  
+  .clock-hand-line {
+    width: 0;
+    border-left: 2px solid black;
+    left: -1px;
+    position: absolute;
+    bottom: 0px;
+  }
+  
+  .clock-hand-line-seconds {
+    height: 50px;
+    border-left: 2px dashed black;
+  }
+  
+  .clock-hand-line-minuts {
+    height: 45px;
+  }
+  
+  .clock-hand-line-hours {
+    height: 30px;
+  }
+  
+  .clock-hand-arrow {
+    position: absolute;
+    left: -6px;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-width: 10px 5px;
+    border-bottom: 10px solid black;
+  }
