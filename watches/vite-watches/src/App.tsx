@@ -10,7 +10,7 @@ function App() {
     {
       id: v4(),
       name: "Moscow",
-      timezone: 4,
+      timezone: 3,
     },
     {
       id: v4(),

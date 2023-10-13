@@ -38,10 +38,6 @@ export default function Clock({ item, onDelete }: IClockPropsExtend) {
   const minutes = timeOfZone.minutes();
   const seconds = timeOfZone.seconds();
 
-  console.log(hours);
-  console.log(minutes);
-  console.log(seconds);
-
   return (
     <div className="clock">
       <h4 className="clock-name">{name}</h4>

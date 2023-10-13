@@ -10,7 +10,7 @@ export default function ArrowPosition({ time, arrowType }: IArrowPosProps) {
     case "seconds":
       degree = time * 6;
       break;
-    case "minuts":
+    case "minutes":
       degree = time * 6;
       break;
     default:
